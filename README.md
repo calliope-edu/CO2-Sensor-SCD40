@@ -1,13 +1,68 @@
-# Calliope mini CO2 Sensor library, based on Sensirion SCD40 Makecode Extension
+You will find the English ReadMe at the end of the document.
 
-Makecode extension for the Calliope mini CO2 Sensor (Sensirion SCD40) connected to the Calliope mini platform.
+# Calliope mini CO₂-Sensor-Bibliothek, basierend auf der Sensirion SCD40 Makecode-Erweiterung
 
-This extension allows you to read CO2, temperature and relative humidity values with an interval of 5 seconds.
+Makecode-Erweiterung für den Calliope mini CO₂-Sensor (SCD40), der mit der Calliope mini-Plattform verbunden ist.
+
+Diese Erweiterung ermöglicht es, CO₂-, Temperatur- und relative Luftfeuchtigkeitswerte in einem Intervall von 5 Sekunden auszulesen.
+
+## I2C-Adresse
+
+* 0x62
+
+## Verwendung
+
+Öffne dein Calliope mini Makecode-Projekt. Gehe zu **„+ Erweiterung“** und füge die folgende URL ein:
+
+https://github.com/calliope-edu/CO2-Sensor-SCD40
+
+## API
+
+CO₂-Wert in ppm abrufen
+```ts
+function get_co2()
+```
+
+Temperatur in Grad Celsius abrufen. Optionales Argument zum Umschalten auf Fahrenheit möglich.
+```ts
+function get_temperature()
+```
+
+Relative Luftfeuchtigkeit in Prozent ermitteln
+```ts
+function get_relative_humidity()
+```
+
+Messung starten. Diese Methode wird automatisch bei der Initialisierung aufgerufen.
+Wenn du stop_continuous_measurement() aufgerufen hast, musst du diese Methode erneut aufrufen, bevor wieder CO₂-, Temperatur- oder Feuchtigkeitswerte ausgelesen werden können.
+```ts
+function start_continuous_measurement()
+```
+
+Messung beenden. Nach dem Aufruf dieser Funktion können keine Sensordaten mehr ausgelesen werden, bis start_continuous_measurement() erneut aufgerufen wird.
+```ts
+function stop_continuous_measurement()
+```
+
+## Hardware
+
+![](icon.png)
 
 ## Supported Targets
 
-* PXT/microbit
-* Calliope mini
+* Calliopemini
+
+## License
+
+[MIT](LICENSE)
+
+
+# Calliope mini CO2 Sensor library, based on Sensirion SCD40 MakeCode Extension
+
+MakeCode extension for the Calliope mini CO2 Sensor (SCD40) connected to the Calliope mini platform.
+
+This extension allows you to read CO2, temperature and relative humidity values with an interval of 5 seconds.
+
 
 ## I2C Address
 
@@ -15,7 +70,7 @@ This extension allows you to read CO2, temperature and relative humidity values 
 
 ## Usage
 
-open your Calliope mini makecode project, in "+ Extension", paste the following URL:
+open your Calliope mini MakeCode project, in "+ Extension", paste the following URL:
 
 https://github.com/calliope-edu/CO2-Sensor-SCD40
 
@@ -53,6 +108,10 @@ function stop_continuous_measurement()
 ## Hardware
 
 ![](icon.png)
+
+## Supported Targets
+
+* Calliopemini
 
 ## License
 
