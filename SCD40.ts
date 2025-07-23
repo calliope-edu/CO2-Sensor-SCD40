@@ -45,7 +45,7 @@ namespace SCD40 {
         }
         pins.i2cWriteNumber(SCD40_I2C_ADDR, 0xEC05, NumberFormat.UInt16BE);
         basic.pause(1);
-        let values = read_words(6);
+        let values = read_words(3);
         co2 = values[0];
         let adc_t = values[1];
         let adc_rh = values[2];
