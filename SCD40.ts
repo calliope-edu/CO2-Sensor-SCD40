@@ -14,6 +14,16 @@ namespace SCD40 {
     let temperature = 0;
     let relative_humidity = 0;
 
+    // The simulator runs this TS body; on hardware TD_NOOP removes the call.
+    // In the simulator, I2C reads return zeros, so these values are kept.
+    //% shim=TD_NOOP
+    function set_simulator_defaults() {
+        co2 = 450;
+        temperature = 21.5;
+        relative_humidity = 68.2;
+    }
+
+    set_simulator_defaults();
     init();
 
     function read_word(repeat = false) {
